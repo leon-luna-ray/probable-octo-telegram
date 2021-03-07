@@ -10,7 +10,7 @@ app.get('/', (req, res) => {
 });
 
 app.listen(PORT, () => console.log(` 
- 🤖 The server is listening on port ${PORT}
+ 🤖 The server is listening on port ${PORT} 
 `));
 
 // Sequelize add later
