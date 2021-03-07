@@ -11,7 +11,8 @@
     "type": "git",
     "url": "git+https://github.com/leon-luna-ray/probable-octo-telegram.git"
   },
-  "author": "Ray Luna",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/leon-luna-ray/probable-octo-telegram/issues"
@@ -19,6 +20,6 @@
   "homepage": "https://github.com/leon-luna-ray/probable-octo-telegram#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "mysql": "^2.18.1"
+    "sequelize": "^6.5.0"
   }
 }
