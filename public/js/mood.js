@@ -1,5 +1,1 @@
-
-
-function addMood (mood) {
-    console.log(mood);
-};
+const moodBtns = require('./moodBtns');
