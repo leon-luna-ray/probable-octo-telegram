@@ -92,32 +92,35 @@ const moodBtns = [
         emoji: '😮'
     },
     {
-        mood: 'tired',
+        mood: 'Tired',
         emoji: '🥱'
     },
 ]; //moodBtns
 
-const moodDiv = document.getElementById('mood-grid');
-
-function generateBtn(mood, emoji) {
-    const markup = `
-
-        <div id="${mood}" class="col s2 center-align mood-btn" onclick="addMood(this.id)">
-            <h2 class="mood-emoji">${emoji}</h2>
-            <p class="mood-title">${mood}</p>
-        </div>
-
-    `;
-
-    moodDiv.append(markup);
-
+function moodBtn(mood, emoji) {
+    return `<div id="${mood}" class="col s2 center-align mood-btn" emoji="${emoji}" onclick="addMood(this.id, this.emoji)">
+        <h2 class="mood-emoji">${emoji}</h2>
+        <p class="mood-title">${mood}</p>
+    </div>`;
 };
 
+const moodBtnsDiv = document.getElementById('mood-btns');
+
 function generatePage() {
+    const buttons = [];
+
     moodBtns.forEach(data => {
-        generateBtn(data.mood, data.emoji);
-        console.log(data.mood, data.emoji);
+        const button = moodBtn(data.mood, data.emoji);
+
+        buttons.push(button);
+
     });
+
+    //add loop to create rows
+
+    const markup = buttons.join(' ');
+    moodBtnsDiv.innerHTML = markup;
+    
 };
 
 generatePage();
