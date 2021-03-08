@@ -5,8 +5,11 @@ const path = require('path');
 
 const PORT = process.env.PORT || 3000;
 
+// Serve static content for the app from the public directory
+app.use(express.static('public'));
+
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname + '/views/index.html'));
+    res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
 app.listen(PORT, () => console.log(` 
