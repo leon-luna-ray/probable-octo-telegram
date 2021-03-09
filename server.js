@@ -23,7 +23,9 @@ db.sequelize.sync().then(() => {
         🤖  The app is running on port ${PORT} 
     
         http://localhost:${PORT}/
-    
+
+        
+
         `
       );
     });
