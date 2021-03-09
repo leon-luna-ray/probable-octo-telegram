@@ -25,13 +25,17 @@ app.get('/mood', (req, res) => {
     res.sendFile(path.join(__dirname + '/public/mood.html'));
 });
 
-// Sequelize add later
+// Sequelize
 db.sequelize.sync().then(() => {
     app.listen(PORT, () => {
       console.log(
-        `==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.`,
-        PORT,
-        PORT,
+        `
+
+        🤖  The app is running on port ${PORT} 
+    
+        http://localhost:${PORT}/
+    
+        `
       );
     });
   });
