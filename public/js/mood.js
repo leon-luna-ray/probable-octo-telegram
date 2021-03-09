@@ -97,31 +97,8 @@ const moodBtns = [
     },
 ]; //moodBtns
 
-function moodBtn(mood, emoji) {
-    return `<div id="${mood}" class="col s2 center-align mood-btn" emoji="${emoji}" onclick="addMood(this.id, this.emoji)">
-        <h2 class="mood-emoji">${emoji}</h2>
-        <p class="mood-title">${mood}</p>
-    </div>`;
-};
-
 const moodBtnsDiv = document.getElementById('mood-btns');
 
-function generatePage() {
-    const buttons = [];
-
-    moodBtns.forEach(data => {
-        const button = moodBtn(data.mood, data.emoji);
-
-        buttons.push(button);
-
-    });
-
-    //add loop to create rows
-
-    const markup = buttons.join(' ');
-    moodBtnsDiv.innerHTML = markup;
-    
-};
 
 function addMood(mood, emoji) {
 
@@ -134,5 +111,29 @@ function addMood(mood, emoji) {
 
 };
 
+function moodBtn(mood, emoji) {
+    return `
+    <div id="${mood}" class="col s2 center-align mood-btn" emoji="${emoji}" onclick="addMood(this.id, this.emoji)">
+        <h2 class="mood-emoji">${emoji}</h2>
+        <p class="mood-title">${mood}</p>
+    </div>`;
+};
 
-generatePage();
+function generateBtns() {
+    const buttons = [];
+
+    for (let i = 0; i < moodBtns.length; i++) {
+        const button = moodBtn(moodBtns[i].mood, moodBtns[i].emoji);
+        buttons.push(button)
+    }
+    
+    return buttons;
+};
+
+function generateBtnGrid() {
+    const btnMarkup = generateBtns();
+
+    console.log(btnMarkup)
+};
+
+generateBtnGrid();
