@@ -1,136 +1,204 @@
-const moodBtns = [
+const emotions = [
     {
-        mood: 'Afraid',
-        emoji: '😓'
+        emotion: 'Afraid',
+        secondary: null,
+        base: 'Afraid',
+        level: 1,
+        emoji: '😓',
     },     
     {
-        mood: 'Angry',
+        emotion: 'Angry',
+        secondary: null,
+        base: 'Angry',
+        level: 1,
         emoji: '😡'
     },
     {
-        mood: 'Annoyed',
+        emotion: 'Annoyed',
+        secondary: 'Frustrated',
+        base: 'Angry',
+        level: 3,
         emoji: '🙄'
     },
     {
-        mood: 'Anxious',
+        emotion: 'Anxious',
+        secondary: null,
+        base: 'Fearful',
+        level: 2,
         emoji: '😣'
     },     
     {
-        mood: 'Bored',
+        emotion: 'Bored',
+        secondary: null,
+        base: 'Bad',
+        level: 2,
         emoji: '😑'
     },
     {
-        mood: 'Calm',
+        emotion: 'Calm',
+        secondary: null,
+        base: 'Happy',
+        level: 2,
         emoji: '😌'
     },
     {
-        mood: 'Confused',
+        emotion: 'Confused',
+        secondary: null,
+        base: 'Surprised',
+        level: 2,
         emoji: '🤔'
     },     
     {
-        mood: 'Crazy',
+        emotion: 'Crazy',
+        secondary: 'Excited',
+        base: 'Surprised',
+        level: 3,
         emoji: '🤪'
     },
     {
-        mood: 'Disgusted',
+        emotion: 'Disgusted',
+        secondary: null,
+        base: 'Disgusted',
+        level: 1,
         emoji: '😒'
     },
     {
-        mood: 'Embarrassed',
+        emotion: 'Embarrassed',
+        secondary: 'Disapproving',
+        base: 'Disgusted',
+        level: 3,
         emoji: '😅'
     },     
     {
-        mood: 'Excited',
+        emotion: 'Excited',
+        secondary: null,
+        base: 'Surprised',
+        level: 2,
         emoji: '😆'
     },
     {
-        mood: 'Happy',
+        emotion: 'Happy',
+        secondary: null,
+        base: 'Happy',
+        level: 1,
         emoji: '🙂'
     },
     {
-        mood: 'Lonely',
+        emotion: 'Lonely',        
+        secondary: null,
+        base: 'Sad',
+        level: 2,
         emoji: '😔'
     },     
     {
-        mood: 'Nostalgic',
+        emotion: 'Nostalgic',
+        secondary: 'Peaceful',
+        base: 'Happy',
+        level: 3,
         emoji: '🥲'
     },
     {
-        mood: 'Numb',
+        emotion: 'Numb',
+        secondary: 'Distant',
+        base: 'Angry',
+        level: 3,
         emoji: '😐'
     },
     {
-        mood: 'Optimistic',
+        emotion: 'Optimistic',
+        secondary: null,
+        base: 'Happy',
+        level: 2,
         emoji: '😃'
     },     
     {
-        mood: 'Proud',
+        emotion: 'Proud',
+        secondary: null,
+        base: 'Happy',
+        level: 2,
         emoji: '😎'
     },
     {
-        mood: 'Sad',
+        emotion: 'Sad',
+        secondary: null,
+        base: 'Sad',
+        level: 1,
         emoji: '🙁'
     },
     {
-        mood: 'Sick',
+        emotion: 'Sick',
+        secondary: 'Awful',
+        base: 'Disgusted',
+        level: 3,
         emoji: '🤢'
     },     
     {
-        mood: 'Silly',
+        emotion: 'Silly',
+        secondary: 'Playful',
+        base: 'Happy',
+        level: 3,
         emoji: '🤡'
     },
     {
-        mood: 'Sleepy',
+        emotion: 'Sleepy',
+        secondary: 'Tired',
+        base: 'Bad',
+        level: 3,
         emoji: '😴'
     },
     {
-        mood: 'Stressed',
+        emotion: 'Stressed',
+        secondary: null,
+        base: 'Bad',
+        level: 2,
         emoji: '😤'
     },     
     {
-        mood: 'Surprised',
+        emotion: 'Surprised',
+        secondary: null,
+        base: 'Surprised',
+        level: 3,
         emoji: '😮'
     },
     {
-        mood: 'Tired',
+        emotion: 'Tired',
+        secondary: null,
+        base: 'Bad',
+        level: 2,
         emoji: '🥱'
     },
-]; //moodBtns
+]; // emotions
 
-const moodBtnsDiv = document.getElementById('mood-btns');
+const emojiDiv = document.getElementById('emoji-btns');
 
-function moodBtn(mood, emoji) {
+function emojiBtn(emotion, emoji) {
     return `
-    <div id="${mood}" class="col s2 center-align mood-btn" emoji="${emoji}" onclick="addMood(this.id, this.emoji)">
-        <h2 class="mood-emoji">${emoji}</h2>
-        <p class="mood-title">${mood}</p>
-    </div>`;
+    <div id="${emotion}" class="col s2 center-align emoji-btn" value="${emoji}" onclick="addMood(this.id, this.value)">
+        <h2 class="emoji">${emoji}</h2>
+        <p class="emotion-title">${emotion}</p>
+    </div>`
 };
 
 function generateBtns() {
     const buttons = [];
 
-    for (let i = 0; i < moodBtns.length; i++) {
-        const button = moodBtn(moodBtns[i].mood, moodBtns[i].emoji);
-        buttons.push(button)
+    for (let i = 0; i < emotions.length; i++) {
+        const button = emojiBtn(emotions[i].emotion, emotions[i].emoji);
+        buttons.push(button);
     }
     
     return buttons;
 };
 
-function generateBtnGrid() {
+function emojiGrid() {
     const buttons = generateBtns();
     const btnGrid = [];
 
     const newRow = `
-
     <div class="row">
-
     `
     const endRow = `
-
     </div> <!-- row -->
-
     `
 
     // Loop to insert rows every 6 btns
@@ -150,8 +218,18 @@ function generateBtnGrid() {
     btnGrid.push(endRow);
     
     const markup = btnGrid.join(' ');
-    moodBtnsDiv.innerHTML = markup;
-    console.log(markup);
-}; generateBtnGrid
+    emojiDiv.innerHTML = markup;
 
-generateBtnGrid();
+}; // emojiGrid
+
+function addMood(emotion, emoji) {
+    console.log(emotion, emoji)
+
+    // there may be an issue with getting the emoji back from the front end?
+
+    // see if you can still get the emoji to come back as it seemed to be working before.....  otherwise will need to get it from the emotions array`
+};
+
+// Render buttons on load
+emojiGrid();
+
