@@ -10,7 +10,11 @@
     "type": "git",
     "url": "git+https://github.com/leon-luna-ray/probable-octo-telegram.git"
   },
-  "keywords": ["mood tracker", "mood", "emoji"],
+  "keywords": [
+    "mood tracker",
+    "mood",
+    "emoji"
+  ],
   "author": "Ray Luna",
   "license": "MIT",
   "bugs": {
@@ -18,7 +22,12 @@
   },
   "homepage": "https://github.com/leon-luna-ray/probable-octo-telegram#readme",
   "dependencies": {
+    "bcryptjs": "2.4.3",
     "express": "^4.17.1",
+    "express-session": "^1.16.1",
+    "mysql2": "^2.2.5",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
     "sequelize": "^6.5.0"
   },
   "description": "Mood tracking app"

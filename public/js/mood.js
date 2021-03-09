@@ -123,4 +123,16 @@ function generatePage() {
     
 };
 
+function addMood(mood, emoji) {
+
+    console.log(mood, emoji);
+    // use to send to backend then to databasenod
+    // addUser.addEventListener('click', (event) => {
+    //     event.preventDefault();
+    //     fetch('/api/signUp', {
+    //       method: 'POST',
+
+};
+
+
 generatePage();
