@@ -3,7 +3,16 @@
 }
 
 #login-box {
-    border: 2px solid black;
+    margin-top: 5rem;
+    padding: 3rem;
+}
+
+.login-title {
+    font-family: 'Josefin Slab', serif;   
+}
+
+#login-btn {
+    margin-top: 3rem;
 }
 
 /* change to hand pointer on hover */
