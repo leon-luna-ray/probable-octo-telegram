@@ -131,9 +131,15 @@ function generateBtns() {
 };
 
 function generateBtnGrid() {
-    const btnMarkup = generateBtns();
+    const buttons = generateBtns();
 
-    console.log(btnMarkup)
+    for (let i = 0; i < buttons.length; i++) {
+        if (i % 6 === 0) {
+            console.log(buttons[i])
+        }
+        
+    }
+
 };
 
 generateBtnGrid();
