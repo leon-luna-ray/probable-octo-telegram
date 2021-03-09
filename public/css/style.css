@@ -1,4 +1,13 @@
+.main-title {
+    font-family: 'Josefin Slab', serif;
+}
+
+#login-box {
+    border: 2px solid black;
+}
+
 /* change to hand pointer on hover */
 .mood-btn {
     cursor: pointer;
 }
+

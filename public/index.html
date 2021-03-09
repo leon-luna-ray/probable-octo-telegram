@@ -4,160 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--CSS-->
-    <link rel="stylesheet" href="./css/style.css">
-    <!-- Materialize compiled and minified CSS -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@500&display=swap" rel="stylesheet">
+    <!-- Materialize -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style.css">
     <title>Probable Octo Telegram</title>
 </head>
 <body>
     <div class="container">
-
+        
         <div class="row">
-            <h1 class="title center-align">Today I feel</h1>
+            <div class="col s12">
+                <h1 class="center-align title main-title">Probable Octo-Telegram 🤖</h1>
+            </div>
         </div>
 
-        <div id="mood-btns">
-            
-            <div class="row"> <!--row 1-->
-                <div id="happy" class="col s2 center-align mood-btn" onclick="addMood(this.id)">
-                    <h2 class="mood-emoji">🙂</h2>
-                    <p class="mood-title">Happy</p>
+        <div class="row"> <!-- login -->
+            <div id="login-box" class="col s6 center-align offset-s3">
+                <div class="row">
+                    <h2 class="login-text">Login</h2>
                 </div>
-
-                <div id="sad" class="col s2 center-align mood-btn" onclick="addMood(this.id)">
-                    <h2 class="mood-emoji">🙁</h2>
-                    <p class="mood-title">Sad</p>
+                <div class="row"></div>
+                <div class="row">
+                    <a class="btn-large yellow">Login</a>
                 </div>
-
-                <div id="surprised" class="col s2 center-align mood-btn" onclick="addMood(this.id)">
-                    <h2 class="mood-emoji">😮</h2>
-                    <p class="mood-title">Surprised</p>
-                </div>
-
-                <div id="afraid" class="col s2 center-align mood-btn" onclick="addMood(this.id)">
-                    <h2 class="mood-emoji">😓</h2>
-                    <p class="mood-title">Afraid</p>
-                </div>
-
-                <div id="disgusted" class="col s2 center-align mood-btn" onclick="addMood(this.id)">
-                    <h2 class="mood-emoji">😒</h2>
-                    <p class="mood-title">Disgusted</p>
-                </div>
-
-                <div id="angry" class="col s2 center-align mood-btn" onclick="addMood(this.id)">
-                    <h2 class="mood-emoji">😡</h2>
-                    <p class="mood-title">Angry</p>
-                </div>
-            </div> <!--row 1-->
-
-            <div class="row"> <!--row 2-->
-                <div id="calm" class="col s2 center-align mood-btn"  onclick="addMood(this.id)">
-                    <h2 class="mood-emoji">😌</h2>
-                    <p class="mood-title">Calm</p>
-                </div>
-
-                <div id="tired" class="col s2 center-align mood-btn" onclick="addMood(this.id)">
-                    <h2 class="mood-emoji">🥱</h2>
-                    <p class="mood-title">Tired</p>
-                </div>
-
-                <div id="excited" class="col s2 center-align mood-btn" onclick="addMood(this.id)">
-                    <h2 class="mood-emoji">😆</h2>
-                    <p class="mood-title">Excited</p>
-                </div>
-
-                <div id="anxious" class="col s2 center-align mood-btn" onclick="addMood(this.id)">
-                    <h2 class="mood-emoji">😣</h2>
-                    <p class="mood-title">Anxious</p>
-                </div>
-
-                <div id="embarrassed" class="col s2 center-align mood-btn" onclick="addMood(this.id)">
-                    <h2 class="mood-emoji">😅</h2>
-                    <p class="mood-title">Embarrassed</p>
-                </div>
-
-                <div id="annoyed" class="col s2 center-align mood-btn" onclick="addMood(this.id)">
-                    <h2 class="mood-emoji">🙄</h2>
-                    <p class="mood-title">Annoyed</p>
-                </div>
-            </div> <!--row 2-->
-
-            <div class="row"> <!--row 3-->
-                <div id="optimistic" class="col s2 center-align mood-btn" onclick="addMood(this.id)">
-                    <h2 class="mood-emoji">😃</h2>
-                    <p class="mood-title">Optimistic</p>
-                </div>
-
-                <div id="sleepy" class="col s2 center-align mood-btn" onclick="addMood(this.id)">
-                    <h2 class="mood-emoji">😴</h2>
-                    <p class="mood-title">Sleepy</p>
-                </div>
-
-                <div id="confused" class="col s2 center-align mood-btn" onclick="addMood(this.id)">
-                    <h2 class="mood-emoji">🤔</h2>
-                    <p class="mood-title">Confused</p>
-                </div>
-
-                <div id="stressed" class="col s2 center-align mood-btn" onclick="addMood(this.id)">
-                    <h2 class="mood-emoji">😤</h2>
-                    <p class="mood-title">Stressed</p>
-                </div>
-
-                <div id="numb" class="col s2 center-align mood-btn" onclick="addMood(this.id)">
-                    <h2 class="mood-emoji">😐</h2>
-                    <p class="mood-title">Numb</p>
-                </div>
-
-                <div id="bored" class="col s2 center-align mood mood-btn" onclick="addMood(this.id)">
-                    <h2 class="mood-emoji">😑</h2>
-                    <p class="mood-title">Bored</p>
-                </div>
-            </div> <!--row 3-->
-
-            <div class="row"> <!--row 4-->
-                <div id="proud" class="col s2 center-align mood-btn" onclick="addMood(this.id)">
-                    <h2 class="mood-emoji">😎</h2>
-                    <p class="mood-title">Proud</p>
-                </div>
-
-                <div id="nostalgic" class="col s2 center-align mood-btn" onclick="addMood(this.id)">
-                    <h2 class="mood-emoji">🥲</h2>
-                    <p class="mood-title">Nostalgic</p>
-                </div>
-
-                <div id="confused" class="col s2 center-align mood-btn" onclick="addMood(this.id)">
-                    <h2 class="mood-emoji">🤡</h2>
-                    <p class="mood-title">Silly</p>
-                </div>
-
-                <div id="lonely" class="col s2 center-align mood-btn" onclick="addMood(this.id, this.attr('h2'.val()))">
-                    <h2 class="mood-emoji">😔</h2>
-                    <p class="mood-title">Lonely</p>
-                </div>
-
-                <div id="sick" class="col s2 center-align mood-btn" onclick="addMood(this.id)">
-                    <h2 class="mood-emoji">🤢</h2>
-                    <p class="mood-title">Sick</p>
-                </div>
-
-                <div id="crazy" class="col s2 center-align mood-btn" onclick="addMood(this.id)">
-                    <h2 class="mood-emoji">🤪</h2>
-                    <p class="mood-title">Crazy</p>
-                </div>
-            </div> <!--row 4-->
-        </div> <!-- mood-btns -->
+            </div>
+        </div> <!-- login -->
 
     </div> <!--container-->
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-    <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    <!-- mood.js -->
-    <script src="/js/mood.js"></script>
 
 </body>
 </html>
