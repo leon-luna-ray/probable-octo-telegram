@@ -132,14 +132,38 @@ function generateBtns() {
 
 function generateBtnGrid() {
     const buttons = generateBtns();
+    const btnGrid = [];
 
-    for (let i = 0; i < buttons.length; i++) {
-        if (i % 6 === 0) {
-            console.log(buttons[i])
-        }
-        
+    const newRow = `
+
+    <div class="row">
+
+    `
+    const endRow = `
+
+    </div> <!-- row -->
+
+    `
+
+    // Loop to insert rows every 6 btns
+    for (let i = 0; i < buttons.length; i++) { 
+        if (i === 0) {
+            btnGrid.push(newRow)
+            btnGrid.push(buttons[i]);
+        } else if (i % 6 === 0) {
+            btnGrid.push(endRow);
+            btnGrid.push(newRow);
+            btnGrid.push(buttons[i]);
+        } else {
+            btnGrid.push(buttons[i]);
+        };
     }
 
+    btnGrid.push(endRow);
+    
+    const markup = btnGrid.join(' ');
+    moodBtnsDiv.innerHTML = markup;
+    console.log(markup);
 };
 
 generateBtnGrid();
