@@ -99,18 +99,6 @@ const moodBtns = [
 
 const moodBtnsDiv = document.getElementById('mood-btns');
 
-
-function addMood(mood, emoji) {
-
-    console.log(mood, emoji);
-    // use to send to backend then to databasenod
-    // addUser.addEventListener('click', (event) => {
-    //     event.preventDefault();
-    //     fetch('/api/signUp', {
-    //       method: 'POST',
-
-};
-
 function moodBtn(mood, emoji) {
     return `
     <div id="${mood}" class="col s2 center-align mood-btn" emoji="${emoji}" onclick="addMood(this.id, this.emoji)">
@@ -164,6 +152,6 @@ function generateBtnGrid() {
     const markup = btnGrid.join(' ');
     moodBtnsDiv.innerHTML = markup;
     console.log(markup);
-};
+}; generateBtnGrid
 
 generateBtnGrid();
