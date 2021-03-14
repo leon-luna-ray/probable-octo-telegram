@@ -206,6 +206,7 @@ function emojiGrid() {
         if (i === 0) {
             btnGrid.push(newRow)
             btnGrid.push(buttons[i]);
+            // New row every 6 emojis
         } else if (i % 6 === 0) {
             btnGrid.push(endRow);
             btnGrid.push(newRow);
@@ -223,7 +224,7 @@ function emojiGrid() {
 }; // emojiGrid
 
 function addMood(emotion, emoji) {
-    console.log(emotion, emoji)
+    console.log(emotion, emoji);
 
     // there may be an issue with getting the emoji back from the front end?
 
